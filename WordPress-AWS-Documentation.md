@@ -4,29 +4,47 @@ Tim Fausten
 Student ID: 34492493
 
 AWS public DNS: http://ec2-13-238-207-70.ap-southeast-2.compute.amazonaws.com/
+
 Public / elastic IP address: 13.238.207.70
+
 Domain name: www.networking-blog.com 
 
 
 1. Log-in to AWS EC2 and Launch an instance
 
 •	Log-in with your credentials here: http://aws.amazon.com/ec2/
+
 •	Click on “Launch Instance”.
+
 •	Give the new instance a name (“WordPress”).
+
 •	Choose Ubuntu Server 24.04 LTS as Amazon Machine Image.
+
 •	Choose the t2.micro as Instance Type.
+
 •	For the Key Pair, click “create new key pair” for the login and enter a name (“WordPress-key”). Leave the key-pair type as RSA and the file format as .pem.
+
 •	The key will then be downloaded and saved in the Downloads folder.
+
 •	Click on “Edit” for the network settings to create a new security group. Call it “WordPress-SecurityGroup” and enable SSH, HTTP and HTTPS for the webserver.
-•	Select 6GB of storage under “Add Storage”.
+
+•	Leave the 30GB of storage under “Add Storage”.
+
 •	Review the summary and click on the orange “Launch Instance” button.
+
 •	You should then see a green success message.
 
+
 You can then connect to your instance using SSH.
+
 •	Click on “Connect to instance” and choose “SSH Client”.
+
 •	Open your terminal
+
 •	Enter the command to change the permissions of the key file.
+
 •	Enter the command to remotely access the WordPress instance via SSH and accept the fingerprint.
+
  
 
 
@@ -45,10 +63,13 @@ sudo apt install apache2
 3. Ensure that the IP address is static
 
 •	Navigate back to your Amazon EC2 Dashboard and scroll down until you see “Elastic IPs” under the Network & Security heading on the left side and click on it.
-•	Click on “Allocate Elastic IP addresses” and keep the defaults (Amazon’s pool of IPv4 addresses and ap-southeast-2 as network border group) and click on “allocate”
- . 
+
+•	Click on “Allocate Elastic IP addresses” and keep the defaults (Amazon’s pool of IPv4 addresses and ap-southeast-2 as network border group) and click on “allocate”.
+
 •	Click on the allocated IPv4 address and then choose “Associate Elastic IP address”.
+
 •	Choose the WordPress instance and the allocated private IPv4 address to associate the elastic IPv4 address with.
+
  
 
 
@@ -63,15 +84,18 @@ When you copy the static public IPv4 address and the public IPv4 DNS address int
 5. Buy a domain name from Amazon Route 53
 
 •	In the AWS Dashboard search tool, search for Route 53 and click “Get started” to register a domain.
+
 •	Follow the steps in AWS to check if the domain name is available, enter your personal details, agree to Terms and Conditions and make the payment.
+
  
 
 
 6. Map the domain name to the IP address
 
 •	In Amazon Route 53 got to “Hosted Zones”, click on the domain name and then “Create Record”.
+
 •	Then create an A record for the domain and map it to the static public IP address created earlier.
- 
+
 •	To test if the domain name has been mapped, enter the URL into a web browser. It should display the default web page again.
  
 
@@ -79,6 +103,7 @@ When you copy the static public IPv4 address and the public IPv4 DNS address int
 7. Install an SSL certificate from Let’s Encrypt using Certbot
 
 •	Connect to the EC2 instance via SSH
+
 •	Install additional snapd repositories by using these commands:
 ```markdown
 sudo snap install core
@@ -100,9 +125,13 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```markdown
 sudo certbot --apache
 ```
+
 •	Follow the prompts to accept the license and enter the domain name (www.networking-blog.com, networking-blog.com)
+
 •	You should now see a success message
+
 •	To check whether the SSL certificate has been successfully installed, navigate to the website and check if it displays HTTPS in the URL and the lock symbol
+
 
 
 Source for installing the SSL certificate: Certbot, certbot.eff.org, https://certbot.eff.org/instructions?ws=apache&os=snap&tab=standard
