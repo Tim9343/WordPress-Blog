@@ -1,5 +1,5 @@
 **ICT171 – Assignment 2: Documentation of WordPress as IaaS**
-
+<p>
 Tim Fausten
 
 Student ID: 34492493
@@ -9,12 +9,13 @@ AWS public DNS: http://ec2-13-238-207-70.ap-southeast-2.compute.amazonaws.com/
 Public / elastic IP address: 13.238.207.70
 
 Domain name: www.networking-blog.com 
+</p>
 
-
+</br>
 
 
 **1. Log-in to AWS EC2 and Launch an instance**
-
+<p>
 •	Log-in with your credentials here: http://aws.amazon.com/ec2/
 
 •	Click on “Launch Instance”.
@@ -47,7 +48,7 @@ You can then connect to your instance using SSH.
 •	Enter the command to change the permissions of the key file.
 
 •	Enter the command to remotely access the WordPress instance via SSH and accept the fingerprint.
-
+</p>
 
 
 
