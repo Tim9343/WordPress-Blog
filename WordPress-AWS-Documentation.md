@@ -71,10 +71,11 @@ sudo apt install apache2
 •	Navigate back to your Amazon EC2 Dashboard and scroll down until you see “Elastic IPs” under the Network & Security heading on the left side and click on it.
 
 •	Click on “Allocate Elastic IP addresses” and keep the defaults (Amazon’s pool of IPv4 addresses and ap-southeast-2 as network border group) and click on “allocate”.
-
+![How to connect to the instance using SSH](ConnecttoInstance.png)
 •	Click on the allocated IPv4 address and then choose “Associate Elastic IP address”.
-
+![Elastic IP address](ElasticIPsuccessful.png)
 •	Choose the WordPress instance and the allocated private IPv4 address to associate the elastic IPv4 address with.
+![Associate elastic IP](AssociateElasticIP.png)
 </p>
 </br>
  
@@ -83,8 +84,9 @@ sudo apt install apache2
 **4. Test if the Apache installation and assignment of public IP address work**
 <p>
 To test if Apache has been installed successfully and the elastic IPv4 address has been allocated, find out the public IPv4 DNS of the WordPress instance from the AWS EC2 instance details.
-
+![Find Public IP for the instance](PublicIP.png)
 When you copy the static public IPv4 address and the public IPv4 DNS address into a web browser, it should show the Apache Default page.
+![Apache Default Website](ApacheDefaultWebsite.png)
 </p> 
 </br>
 
@@ -104,7 +106,7 @@ When you copy the static public IPv4 address and the public IPv4 DNS address int
 •	In Amazon Route 53 got to “Hosted Zones”, click on the domain name and then “Create Record”.
 
 •	Then create an A record for the domain and map it to the static public IP address created earlier.
-
+![Create A Record](CreateARecord.png)
 •	To test if the domain name has been mapped, enter the URL into a web browser. It should display the default web page again.
 </p>
 </br>
@@ -140,9 +142,9 @@ sudo certbot --apache
 •	Follow the prompts to accept the license and enter the domain name (www.networking-blog.com, networking-blog.com)
 
 •	You should now see a success message
-
+![SSL success message](SSLsuccess.png)
 •	To check whether the SSL certificate has been successfully installed, navigate to the website and check if it displays HTTPS in the URL and the lock symbol
-
+![SSL lock symbol](SSLLockSymbol.png)
 
 
 Source for installing the SSL certificate: Certbot, certbot.eff.org, https://certbot.eff.org/instructions?ws=apache&os=snap&tab=standard
