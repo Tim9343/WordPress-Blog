@@ -49,12 +49,12 @@ You can then connect to your instance using SSH.
 
 •	Enter the command to remotely access the WordPress instance via SSH and accept the fingerprint.
 </p>
-
+</br>
 
 
 
 **2. Install the Apache webserver**
-
+<p>
 •	Before installing Apache, update the apt repository by typing the following command into the terminal:
 ```markdown
 sudo apt update
@@ -63,10 +63,11 @@ sudo apt update
 ```markdown
 sudo apt install apache2
 ```
-
+</p>
+</br>
 
 **3. Ensure that the IP address is static**
-
+<p>
 •	Navigate back to your Amazon EC2 Dashboard and scroll down until you see “Elastic IPs” under the Network & Security heading on the left side and click on it.
 
 •	Click on “Allocate Elastic IP addresses” and keep the defaults (Amazon’s pool of IPv4 addresses and ap-southeast-2 as network border group) and click on “allocate”.
@@ -74,41 +75,44 @@ sudo apt install apache2
 •	Click on the allocated IPv4 address and then choose “Associate Elastic IP address”.
 
 •	Choose the WordPress instance and the allocated private IPv4 address to associate the elastic IPv4 address with.
-
+</p>
+</br>
  
 
 
 **4. Test if the Apache installation and assignment of public IP address work**
-
+<p>
 To test if Apache has been installed successfully and the elastic IPv4 address has been allocated, find out the public IPv4 DNS of the WordPress instance from the AWS EC2 instance details.
 
 When you copy the static public IPv4 address and the public IPv4 DNS address into a web browser, it should show the Apache Default page.
- 
-
+</p> 
+</br>
 
 
 **5. Buy a domain name from Amazon Route 53**
-
+<p>
 •	In the AWS Dashboard search tool, search for Route 53 and click “Get started” to register a domain.
 
 •	Follow the steps in AWS to check if the domain name is available, enter your personal details, agree to Terms and Conditions and make the payment.
-
+</p>
+</br>
  
 
 
 **6. Map the domain name to the IP address**
-
+<p>
 •	In Amazon Route 53 got to “Hosted Zones”, click on the domain name and then “Create Record”.
 
 •	Then create an A record for the domain and map it to the static public IP address created earlier.
 
 •	To test if the domain name has been mapped, enter the URL into a web browser. It should display the default web page again.
- 
+</p>
+</br>
 
 
 
 **7. Install an SSL certificate from Let’s Encrypt using Certbot**
-
+<p>
 •	Connect to the EC2 instance via SSH
 
 •	Install additional snapd repositories by using these commands:
@@ -142,3 +146,5 @@ sudo certbot --apache
 
 
 Source for installing the SSL certificate: Certbot, certbot.eff.org, https://certbot.eff.org/instructions?ws=apache&os=snap&tab=standard
+</p>
+</br>
