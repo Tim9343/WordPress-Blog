@@ -1,6 +1,7 @@
-ICT171 – Assignment 2: Documentation of WordPress as IaaS
+**ICT171 – Assignment 2: Documentation of WordPress as IaaS**
 
 Tim Fausten
+
 Student ID: 34492493
 
 AWS public DNS: http://ec2-13-238-207-70.ap-southeast-2.compute.amazonaws.com/
@@ -10,7 +11,9 @@ Public / elastic IP address: 13.238.207.70
 Domain name: www.networking-blog.com 
 
 
-1. Log-in to AWS EC2 and Launch an instance
+
+
+**1. Log-in to AWS EC2 and Launch an instance**
 
 •	Log-in with your credentials here: http://aws.amazon.com/ec2/
 
@@ -45,11 +48,11 @@ You can then connect to your instance using SSH.
 
 •	Enter the command to remotely access the WordPress instance via SSH and accept the fingerprint.
 
- 
 
 
 
-2. Install the Apache webserver
+
+**2. Install the Apache webserver**
 
 •	Before installing Apache, update the apt repository by typing the following command into the terminal:
 ```markdown
@@ -60,7 +63,8 @@ sudo apt update
 sudo apt install apache2
 ```
 
-3. Ensure that the IP address is static
+
+**3. Ensure that the IP address is static**
 
 •	Navigate back to your Amazon EC2 Dashboard and scroll down until you see “Elastic IPs” under the Network & Security heading on the left side and click on it.
 
@@ -73,7 +77,7 @@ sudo apt install apache2
  
 
 
-4. Test if the Apache installation and assignment of public IP address work
+**4. Test if the Apache installation and assignment of public IP address work**
 
 To test if Apache has been installed successfully and the elastic IPv4 address has been allocated, find out the public IPv4 DNS of the WordPress instance from the AWS EC2 instance details.
 
@@ -81,7 +85,8 @@ When you copy the static public IPv4 address and the public IPv4 DNS address int
  
 
 
-5. Buy a domain name from Amazon Route 53
+
+**5. Buy a domain name from Amazon Route 53**
 
 •	In the AWS Dashboard search tool, search for Route 53 and click “Get started” to register a domain.
 
@@ -90,7 +95,7 @@ When you copy the static public IPv4 address and the public IPv4 DNS address int
  
 
 
-6. Map the domain name to the IP address
+**6. Map the domain name to the IP address**
 
 •	In Amazon Route 53 got to “Hosted Zones”, click on the domain name and then “Create Record”.
 
@@ -100,7 +105,8 @@ When you copy the static public IPv4 address and the public IPv4 DNS address int
  
 
 
-7. Install an SSL certificate from Let’s Encrypt using Certbot
+
+**7. Install an SSL certificate from Let’s Encrypt using Certbot**
 
 •	Connect to the EC2 instance via SSH
 
