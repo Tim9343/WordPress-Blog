@@ -201,9 +201,11 @@ sudo systemctl restart mariadb
 **9. Install PHP**
 <p>
 •	Install these 5 packages to install PHP and the PHP connection to the SQL database:
+
 ```markdown
 sudo apt install php php-mysql php-gd php-cli php-common -y
 ```
+
 </p>
 </br>
 
@@ -211,9 +213,11 @@ sudo apt install php php-mysql php-gd php-cli php-common -y
 **9. Download and configure WordPress**
 <p>
 •	Go to the following website: 
+
 ```markdown
 https://en-au.wordpress.org/download/ 
 ```
+
 
 •	Under the section “Download and install it yourself” find the “Download WordPress” button and right click on it to copy the download link
 
