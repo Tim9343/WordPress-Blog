@@ -155,9 +155,11 @@ Source for installing the SSL certificate: Certbot, certbot.eff.org, https://cer
 **8. Install and configure the MariaDB database**
 <p>
 •	Install MariaDB server and client with the following command:
+
 ```markdown
 sudo apt install mariadb-server mariadb-client -y
 ```
+
 
 •	Start the Maria DB service and check if the service is running using the following commands:
 ```markdown
