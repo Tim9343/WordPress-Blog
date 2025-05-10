@@ -320,4 +320,25 @@ grant all privileges on wordpress.* to “wpadmin”;
 Steps 7 to 9 were taken from this source and were partially adapted:
 Alok Kumar (2022), AWS - Installing WordPress on EC2(ubuntu) - Complete LAMP setup with step by step instructions, https://www.youtube.com/watch?v=5rlCUXjVaHE 
 
+</br>
+</br>
 
+
+**11. Customise the WordPress theme and create blog posts**
+<p>
+•	To customise the sample WordPress theme go to the WordPress Dashboard and select Appearance -> Themes -> Customise
+
+•	The editor opens and allows you to choose different layouts for the site and allows you to modify the header and footer of the WordPress site
+
+•	To change the content of the site, WordPress offers you blocks that you can insert into the site to add text blocks, images, tables, list, videos and other items
+
+•	To add a blog post, go back to the Dashboard and select "Posts" in the menu on the left side
+
+•	Click "Add Post" to create a new blog post
+
+•	The editor opens and lets you add blocks to insert text, images and other items like before when you customised your WordPress theme
+
+•	Once the blog post is written, you have the option to view a preview of it, publish it or select a time and date when the post should be published and open or close the comment section to allow or deny the visitors of the blog to make comments to your posts
+
+</p>
+</br>

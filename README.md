@@ -21,3 +21,4 @@ The documentation includes the following steps:
 8. Installing an configuring the MySQL database (MariaDB)
 9. Installing PHP
 10. Downloading and configuring WordPress to be able to login to the WordPress admin console
+11. Customising the WordPress theme and creating blog posts
