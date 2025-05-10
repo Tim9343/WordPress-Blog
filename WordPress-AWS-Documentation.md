@@ -48,6 +48,8 @@ You can then connect to your instance using SSH.
 •	Enter the command to change the permissions of the key file.
 
 •	Enter the command to remotely access the WordPress instance via SSH and accept the fingerprint.
+
+![How to connect to the instance using SSH](ConnecttoInstance.png)
 </p>
 </br>
 
@@ -71,11 +73,11 @@ sudo apt install apache2
 •	Navigate back to your Amazon EC2 Dashboard and scroll down until you see “Elastic IPs” under the Network & Security heading on the left side and click on it.
 
 •	Click on “Allocate Elastic IP addresses” and keep the defaults (Amazon’s pool of IPv4 addresses and ap-southeast-2 as network border group) and click on “allocate”.
-![How to connect to the instance using SSH](ConnecttoInstance.png)
+
 •	Click on the allocated IPv4 address and then choose “Associate Elastic IP address”.
-![Elastic IP address](ElasticIPsuccessful.png)
-•	Choose the WordPress instance and the allocated private IPv4 address to associate the elastic IPv4 address with.
 ![Associate elastic IP](AssociateElasticIP.png)
+•	Choose the WordPress instance and the allocated private IPv4 address to associate the elastic IPv4 address with.
+![Elastic IP address](ElasticIPsuccessful.png)
 </p>
 </br>
  
@@ -86,6 +88,7 @@ sudo apt install apache2
 To test if Apache has been installed successfully and the elastic IPv4 address has been allocated, find out the public IPv4 DNS of the WordPress instance from the AWS EC2 instance details.
 ![Find Public IP for the instance](PublicIP.png)
 When you copy the static public IPv4 address and the public IPv4 DNS address into a web browser, it should show the Apache Default page.
+
 ![Apache Default Website](ApacheDefaultWebsite.png)
 </p> 
 </br>
@@ -212,7 +215,7 @@ sudo apt install php php-mysql php-gd php-cli php-common -y
 </br>
 
 
-**9. Download and configure WordPress**
+**10. Download and configure WordPress**
 <p>
 •	Go to the following website: 
 
