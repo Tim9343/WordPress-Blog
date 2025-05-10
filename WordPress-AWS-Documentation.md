@@ -269,7 +269,7 @@ ls -l
 ```
 ![Changing the owner](/Images/wordpress-chown.png)
 
-•	Next, remove the default Apache index.html so WordPress shows the actual WordPress site after setup:
+•	Next, remove the default Apache index.html so WordPress will use the wp-admin page to start the setup:
 ```markdown
 sudo rm -rf index.html
 ```
