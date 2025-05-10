@@ -284,7 +284,7 @@ sudo rm -rf index.html
 mysql -u root -p
 ```
 
-•	At the MariaDB [(none)] prompt enter the following to create a database name wordpress:
+•	At the MariaDB [(none)] prompt enter the following to create a database named wordpress:
 ```markdown
 create database wordpress;
 ```
