@@ -49,7 +49,7 @@ You can then connect to your instance using SSH.
 
 •	Enter the command to remotely access the WordPress instance via SSH and accept the fingerprint.
 
-![How to connect to the instance using SSH](ConnecttoInstance.png)
+![How to connect to the instance using SSH](/Images/ConnecttoInstance.png)
 </p>
 </br>
 
@@ -58,13 +58,16 @@ You can then connect to your instance using SSH.
 **2. Install the Apache webserver**
 <p>
 •	Before installing Apache, update the apt repository by typing the following command into the terminal:
+
 ```markdown
 sudo apt update
 ```
 •	Install the Apache webserver using the following command:
+
 ```markdown
 sudo apt install apache2
 ```
+
 </p>
 </br>
 
@@ -75,9 +78,10 @@ sudo apt install apache2
 •	Click on “Allocate Elastic IP addresses” and keep the defaults (Amazon’s pool of IPv4 addresses and ap-southeast-2 as network border group) and click on “allocate”.
 
 •	Click on the allocated IPv4 address and then choose “Associate Elastic IP address”.
-![Associate elastic IP](AssociateElasticIP.png)
+![Associate elastic IP](/Images/AssociateElasticIP.png)
+
 •	Choose the WordPress instance and the allocated private IPv4 address to associate the elastic IPv4 address with.
-![Elastic IP address](ElasticIPsuccessful.png)
+![Elastic IP address](/Images/ElasticIPsuccessful.png)
 </p>
 </br>
  
@@ -86,10 +90,12 @@ sudo apt install apache2
 **4. Test if the Apache installation and assignment of public IP address work**
 <p>
 To test if Apache has been installed successfully and the elastic IPv4 address has been allocated, find out the public IPv4 DNS of the WordPress instance from the AWS EC2 instance details.
-![Find Public IP for the instance](PublicIP.png)
+
+![Find Public IP for the instance](/Images/PublicIP.png)
+
 When you copy the static public IPv4 address and the public IPv4 DNS address into a web browser, it should show the Apache Default page.
 
-![Apache Default Website](ApacheDefaultWebsite.png)
+![Apache Default Website](/Images/ApacheDefaultWebsite.png)
 </p> 
 </br>
 
@@ -109,7 +115,8 @@ When you copy the static public IPv4 address and the public IPv4 DNS address int
 •	In Amazon Route 53 got to “Hosted Zones”, click on the domain name and then “Create Record”.
 
 •	Then create an A record for the domain and map it to the static public IP address created earlier.
-![Create A Record](CreateARecord.png)
+![Create A Record](/Images/CreateARecord.png)
+
 •	To test if the domain name has been mapped, enter the URL into a web browser. It should display the default web page again.
 </p>
 </br>
@@ -145,9 +152,10 @@ sudo certbot --apache
 •	Follow the prompts to accept the license and enter the domain name (www.networking-blog.com, networking-blog.com)
 
 •	You should now see a success message
-![SSL success message](SSLsuccess.png)
+![SSL success message](/Images/SSLsuccess.png)
+
 •	To check whether the SSL certificate has been successfully installed, navigate to the website and check if it displays HTTPS in the URL and the lock symbol
-![SSL lock symbol](SSLLockSymbol.png)
+![SSL lock symbol](/Images/SSLLockSymbol.png)
 
 
 Source for installing the SSL certificate: Certbot, certbot.eff.org, https://certbot.eff.org/instructions?ws=apache&os=snap&tab=standard
@@ -237,7 +245,7 @@ unzip latest-en_AU.zip
 ```
 
 •	You should now see the wordpress folder 
-![wordpress folder](wordpress-folder.png)
+![wordpress folder](/Images/wordpress-folder.png)
 
 •	Copy all contents of the wordpress folder to the /var/index/html folder:
 ```markdown
@@ -259,7 +267,7 @@ sudo chown www-data:www-data -R /var/www/html/
 ```markdown
 ls -l
 ```
-![Changing the owner](wordpress-chown.png)
+![Changing the owner](/Images/wordpress-chown.png)
 
 •	Next, remove the default Apache index.html so WordPress shows the actual WordPress site after setup:
 ```markdown
@@ -267,7 +275,7 @@ sudo rm -rf index.html
 ```
 
 •	To start the installation of Wordpress, open a web browser and type in your URL (in this case www.networking-blog.com). You should be redirected to the wp-admin page from WordPress and then see this page:
-![WordPress Setup page](wordpress-setup.png)
+![WordPress Setup page](/Images/wordpress-setup.png)
 
 •	Before continuing the setup, first create the database, username and password which are needed to continue the WordPress setup in the browser.
 
@@ -301,10 +309,10 @@ grant all privileges on wordpress.* to “wpadmin”;
 •	Enter the title of your WordPress page, enter a username and password to access the WordPress admin console and your email address and click “Install WordPress”
 
 •	The installation is now complete, and you can login to the WordPress admin console to administer the WordPress site. Click on the name of your page to view the sample site and to confirm that the installation was successful.
-![WordPress Dashboard](wordpress-dashboard.png)
+![WordPress Dashboard](/Images/wordpress-dashboard.png)
 
 •	The sample page is shown. Note that the URL is networking-blog.com (without the /wp-admin/ at the end) and it is using HTTPS as configured in step 7.
-![WordPress sample page](wordpress-samplepage.png)
+![WordPress sample page](/Images/wordpress-samplepage.png)
 
 </p>
 </br>
