@@ -45,9 +45,14 @@ You can then connect to your instance using SSH.
 
 •	Open your terminal
 
-•	Enter the command to change the permissions of the key file.
+•	Use the following command to copy your key file from the Downloads directory to the /home/ubuntu directory.
+```markdown
+cp /home/ubuntu/Downloads /home/ubuntu
+```
 
-•	Enter the command to remotely access the WordPress instance via SSH and accept the fingerprint.
+•	Enter the command to change the permissions of the key file according to the instructions from Amazon.
+
+•	Enter the command to remotely access the WordPress instance via SSH according to the instructions from Amazon and accept the fingerprint.
 
 ![How to connect to the instance using SSH](/Images/ConnecttoInstance.png)
 </p>
