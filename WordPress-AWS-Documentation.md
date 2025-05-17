@@ -188,6 +188,7 @@ sudo mysql_secure_installation
 
 •	You will then be prompted to answer some question for the setup and security of MariaDB:
 
+```markdown
 1.	When prompted for the current password of the root user press enter as currently no root password is set after freshly installing MariaDB
 
 2.	Switch to Unix socket authentication? Y
@@ -201,6 +202,7 @@ sudo mysql_secure_installation
 6.	Remove test database and access to it? Y
 
 7.	Reload privilege tables now? Y
+```
 
 
 •	Restart the Maria DB service so changes come into effect:
@@ -339,6 +341,92 @@ Alok Kumar (2022), AWS - Installing WordPress on EC2(ubuntu) - Complete LAMP set
 •	The editor opens and lets you add blocks to insert text, images and other items like before when you customised your WordPress theme
 
 •	Once the blog post is written, you have the option to view a preview of it, publish it or select a time and date when the post should be published and open or close the comment section to allow or deny the visitors of the blog to make comments to your posts
+
+</p>
+</br>
+
+
+
+**12. Create a backup script that automatically backups all WordPress files**
+<p>
+
+•	Create a new directory to store the backups
+```markdown
+mkdir backups 
+```
+
+•	Create a file called backup_wordpress.sh using the nano text editor
+```markdown
+nano backup_wordpress.sh
+```
+
+•	The script contains a variable “date” which will be used to create the filename of the backup to distinguish which backup was taken on which date. 
+•	It specifies the /var/www/html/ directory as the source directory and the /home/ubuntu/backups directory as the destination for the backup 
+•	It creates a tar archive of the backed-up WordPress files
+•	Write the following into the backup_wordpress.sh file and save the file:
+
+```markdown
+#!/bin/bash
+
+source=”/var/www/html/”
+destination=”/home/ubuntu/backups”
+day=$(date +"%d_%m_%y")
+name=”WordPress-Backup“
+archive=”$name-$day.tgz”
+tar czf $destination/$archive $source
+```
+
+•	Make the script executable with the following command
+```markdown
+chmod 777 backup_wordpress.sh
+```
+
+•	To make the script available systemwide, move it into the /usr/bin/ directory
+```markdown
+sudo mv /home/ubuntu/backup_wordpress.sh /usr/bin/
+```
+
+•	Confirm that the script was moved to the /usr/bin/ directory
+```markdown
+cd /usr/bin/
+ls -l
+```
+
+•	Change the owner of the script to the root user
+```markdown
+sudo chown root /usr/bin/backup_wordpress.sh
+```
+
+•	Change the directory to any directory other than the /usr/bin/ directory to test if the script is executed
+```markdown
+cd ..
+backup_wordpress.sh
+```
+
+•	When you change into the /home/ubuntu/backups folder, you should see the backup
+```markdown
+cd /home/ubuntu/backups
+ls -l
+```
+
+![The backup has been successfully created](/Images/backup_complete.png)
+
+•	Edit the crontab file to set when the script is executed
+```markdown
+sudo nano /etc/crontab
+```
+
+•	Change the schedule of the backup_wordpress.sh script so it runs every day at 11:00 AM
+```markdown
+ m  h  dom mon dow user command
+ 0  11  *   *   *   root /usr/bin/backup_wordpress.sh
+```
+
+
+Sources:
+Linux Shell Script to Backup Files and Directory, Geeks for Geeks, https://www.geeksforgeeks.org/linux-shell-script-to-backup-files-and-directory/ 
+
+Crontab Guru, Cronitor, https://crontab.guru/ 
 
 </p>
 </br>

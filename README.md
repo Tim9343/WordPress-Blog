@@ -22,6 +22,7 @@ The documentation includes the following steps:
 9. Installing PHP
 10. Downloading and configuring WordPress to be able to login to the WordPress admin console
 11. Customising the WordPress theme and creating blog posts
+12. Creating a script that backs up all WordPress files automatically using crontab
 
 </br>
 
