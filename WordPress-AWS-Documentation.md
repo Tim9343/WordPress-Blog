@@ -47,7 +47,7 @@ You can then connect to your instance using SSH.
 
 •	Use the following command to copy your key file from the Downloads directory to the /home/ubuntu directory.
 ```markdown
-cp /home/ubuntu/Downloads /home/ubuntu
+cp /home/tim/Downloads/WordPress-key.pem /home/tim
 ```
 
 •	Enter the command to change the permissions of the key file according to the instructions from Amazon.
