@@ -256,7 +256,7 @@ unzip latest-en_AU.zip
 
 •	Copy all contents of the wordpress folder to the /var/index/html folder:
 ```markdown
-sudo cp -r /wordpress/* /var/www/html/
+sudo cp -r /home/ubuntu/wordpress/* /var/www/html/
 ```
 
 •	Check if the files have been copied to /var/www/html/ by changing the directory and then listing the contents:
