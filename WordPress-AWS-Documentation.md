@@ -9,6 +9,8 @@ AWS public DNS: http://ec2-13-238-207-70.ap-southeast-2.compute.amazonaws.com/
 Public / elastic IP address: 13.238.207.70
 
 Domain name: www.networking-blog.com 
+
+Link to the video explainer: https://youtu.be/EW0CrSEfe2U
 </p>
 
 </br>
