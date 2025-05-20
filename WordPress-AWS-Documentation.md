@@ -45,7 +45,7 @@ You can then connect to your instance using SSH.
 
 •	Open your terminal
 
-•	Use the following command to copy your key file from the Downloads directory to the /home/ubuntu directory.
+•	Use the following command to copy your key file from the Downloads directory to the home directory.
 ```markdown
 cp /home/tim/Downloads/WordPress-key.pem /home/tim
 ```
