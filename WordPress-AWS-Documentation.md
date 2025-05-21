@@ -10,7 +10,7 @@ Public / elastic IP address: 13.238.207.70
 
 Domain name: www.networking-blog.com 
 
-Link to the video explainer: https://youtu.be/EW0CrSEfe2U
+Link to the video explainer: https://youtu.be/4D8_P7PPSpo
 </p>
 
 </br>
@@ -367,9 +367,9 @@ mkdir backups
 nano backup_wordpress.sh
 ```
 
-•	The script contains a variable “date” which will be used to create the filename of the backup to distinguish which backup was taken on which date. 
-•	It specifies the /var/www/html/ directory as the source directory and the /home/ubuntu/backups directory as the destination for the backup 
-•	It creates a tar archive of the backed-up WordPress files
+•	The script contains a variable “date” which will be used to create the filename of the backup to distinguish which backup was taken on which date.</br> 
+•	It specifies the /var/www/html/ directory as the source directory and the /home/ubuntu/backups directory as the destination for the backup</br>
+•	It creates a tar archive of the backed-up WordPress files</br>
 •	Write the following into the backup_wordpress.sh file and save the file:
 
 ```markdown
@@ -382,6 +382,8 @@ name=”WordPress-Backup“
 archive=”$name-$day.tgz”
 tar czf $destination/$archive $source
 ```
+
+![Create the backup_wordpress.sh file](/Images/backup_wordpress.sh.png)
 
 •	Make the script executable with the following command
 ```markdown
@@ -428,6 +430,11 @@ sudo nano /etc/crontab
  m  h  dom mon dow user command
  0  11  *   *   *   root /usr/bin/backup_wordpress.sh
 ```
+
+![Schedule the backup using crontab](/Images/crontab.png)
+
+•	Once the script is running, we can see that a backup has been created at 11:00 AM on 20 May (please note that the Amazon EC2 instance was stopped on 18 and 19 May so there have been no backups on these dates)
+![The backup from the backup script has been successfully created](/Images/backup-from-backupscript.png)
 
 
 Sources:
