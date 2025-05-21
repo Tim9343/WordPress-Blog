@@ -433,7 +433,7 @@ sudo nano /etc/crontab
 
 ![Schedule the backup using crontab](/Images/crontab.png)
 
-•	Once the script is running, we can see that a backup has been created at 11:00 AM on 20 May (please note that the Amazon EC2 instance was stopped on 18 and 19 May so there have been no backups on these dates)
+•	Once the script is running, we can see that a backup has been created at 11:00 AM on 20 May (please note that the Amazon EC2 instance was stopped on 18 and 19 May so there have been no backups created on these dates)
 ![The backup from the backup script has been successfully created](/Images/backup-from-backupscript.png)
 
 
