@@ -433,7 +433,7 @@ sudo nano /etc/crontab
 
 ![Schedule the backup using crontab](/Images/crontab.png)
 
-•	Once the script is running, we can see that a backup has been created at 11:00 AM on 20 May (please note that the Amazon EC2 instance was stopped on 18 and 19 May so there have been no backups created on these dates).</br>
+•	Once the script is running, we can see that a backup has been created at 11:00 AM every day (please note that the Amazon EC2 instance was stopped on 18 and 19 May so there have been no backups created on these dates).</br>
 You can also see that the backup which was created automatically using the script shows the root user as the owner (as the root user is the owner of the script), whereas the backup that has been created to test the script is showing "ubuntu" as the owner.
 ![The backup from the backup script has been successfully created](/Images/backup-from-backupscript.png)
 
