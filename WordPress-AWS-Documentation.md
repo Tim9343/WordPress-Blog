@@ -10,7 +10,7 @@ Public / elastic IP address: 13.238.207.70
 
 Domain name: www.networking-blog.com 
 
-Link to the video explainer: https://youtu.be/4D8_P7PPSpo 
+Link to the video explainer: https://youtu.be/-dE9qgdFvdE 
 </p>
 
 </br>
