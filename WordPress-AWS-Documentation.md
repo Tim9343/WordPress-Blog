@@ -383,8 +383,6 @@ archive=”$name-$day.tgz”
 tar czf $destination/$archive $source
 ```
 
-![Create the backup_wordpress.sh file](/Images/backup_wordpress.sh.png)
-
 •	Make the script executable with the following command
 ```markdown
 chmod 777 backup_wordpress.sh
