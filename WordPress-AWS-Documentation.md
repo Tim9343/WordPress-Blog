@@ -300,12 +300,12 @@ create database wordpress;
 
 •	Create the username and password (create your own username and password):
 ```markdown
-create user “wpadmin” identified by “wpadminpassword”;
+create user "wpadmin" identified by "wpadminpassword";
 ```
 
 •	Grant privileges to the wpadmin user for all objects in the wordpress database:
 ```markdown
-grant all privileges on wordpress.* to “wpadmin”;
+grant all privileges on wordpress.* to "wpadmin";
 ```
 
 
@@ -367,19 +367,21 @@ mkdir backups
 nano backup_wordpress.sh
 ```
 
-•	The script contains a variable “date” which will be used to create the filename of the backup to distinguish which backup was taken on which date.</br> 
-•	It specifies the /var/www/html/ directory as the source directory and the /home/ubuntu/backups directory as the destination for the backup</br>
-•	It creates a tar archive of the backed-up WordPress files</br>
-•	Write the following into the backup_wordpress.sh file and save the file:
+The script does the following:</br>
+•	The script specifies the /var/www/html/ directory as the source directory and the /home/ubuntu/backups directory as the destination for the backup</br>
+•	It contains a variable “date” which will be appended to the filename of the backup to distinguish which backup was taken on which date.</br> 
+•	It creates a tar archive of the backed-up WordPress files which will be copied into the specified destination directory from the source directory.</br>
+</br>
+•	Write the following lines into the backup_wordpress.sh file and save the file:
 
 ```markdown
 #!/bin/bash
 
-source=”/var/www/html/”
-destination=”/home/ubuntu/backups”
+source="/var/www/html/"
+destination="/home/ubuntu/backups"
 day=$(date +"%d_%m_%y")
-name=”WordPress-Backup“
-archive=”$name-$day.tgz”
+name="WordPress-Backup"
+archive="$name-$day.tgz"
 tar czf $destination/$archive $source
 ```
 
